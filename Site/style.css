@@ -1,133 +1,140 @@
 :root {
-  --primary-blue: #2196f3; /* A slightly softer blue */
-  --dark-blue: #1976d2; /* Darker shade for hover/active */
-  --light-gray: #f5f5f5; /* Very light background */
-  --medium-gray: #e0e0e0; /* Subtle borders/separators */
-  --dark-text: #424242; /* Dark gray for main text */
-  --light-text: #757575; /* Lighter gray for secondary text */
-  --white: #ffffff;
-  --black: #212121; /* Near black for dark mode backgrounds */
+    --primary-blue: #2196F3; /* A slightly softer blue */
+    --dark-blue: #1976D2; /* Darker shade for hover/active */
+    --light-gray: #F5F5F5; /* Very light background */
+    --medium-gray: #E0E0E0; /* Subtle borders/separators */
+    --dark-text: #424242; /* Dark gray for main text */
+    --light-text: #757575; /* Lighter gray for secondary text */
+    --white: #FFFFFF;
+    --black: #212121; /* Near black for dark mode backgrounds */
 }
 
 /* Dark mode variables */
 .dark-mode {
-  --primary-blue: #64b5f6;
-  --dark-blue: #42a5f5;
-  --light-gray: #303030;
-  --medium-gray: #424242;
-  --dark-text: #e0e0e0;
-  --light-text: #bdbdbd;
-  --white: #212121;
-  --black: #ffffff;
+    --primary-blue: #64B5F6;
+    --dark-blue: #42A5F5;
+    --light-gray: #303030;
+    --medium-gray: #424242;
+    --dark-text: #E0E0E0;
+    --light-text: #BDBDBD;
+    --white: #212121;
+    --black: #FFFFFF;
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--light-gray); /* Using variable */
-  color: var(--dark-text); /* Using variable */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    color: var(--dark-text);
 }
 
 .navbar {
-  background-color: var(--white); /* Using variable */
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--dark-text); /* Using variable */
-  text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .navbar-nav {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 .nav-item {
-  margin-left: 1.5rem;
+    margin-left: 1.5rem;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: var(--light-text); /* Using variable */
-  font-weight: 500;
-  transition: color 0.3s ease;
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: var(--primary-blue); /* Using variable */
+    color: var(--primary-blue);
 }
 
 .container {
-  padding: 2rem;
-  text-align: center;
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px; /* From prompts.html container */
+    margin: 20px auto; /* From prompts.html container */
+    background-color: var(--white); /* From prompts.html container */
+    border-radius: 8px; /* From prompts.html container */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* From prompts.html container */
 }
 
 .hero {
-  background-color: var(--primary-blue); /* Using variable */
-  color: var(--white); /* Using variable */
-  padding: 4rem 2rem;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
+    background-color: var(--primary-blue);
+    background-image: linear-gradient(45deg, var(--primary-blue) 0%, var(--dark-blue) 100%); /* Subtle gradient */
+    color: var(--white);
+    padding: 4rem 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  margin: 0 auto;
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .features {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .feature-card {
-  background-color: var(--white); /* Using variable */
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: left;
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: left;
 }
 
 .feature-card h3 {
-  color: var(--primary-blue); /* Using variable */
-  margin-top: 0;
+    color: var(--primary-blue);
+    margin-top: 0;
 }
 
 footer {
-  background-color: var(--black); /* Using variable */
-  color: var(--white); /* Using variable */
-  text-align: center;
-  padding: 1rem 0;
-  /* Removed margin-top: 2rem; from here as it was duplicated and not needed globally */
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0;
+    /* Removed margin-top: 2rem; from here as it was duplicated and not needed globally */
 }
 
-/* Extracted from inline styles */
+/* Markdown container styles */
 .markdown-container img {
   display: block;
   margin: 0 auto;
   border-radius: 1rem;
-  box-shadow:
-    0 4px 6px rgba(0, 0, 0, 0.1),
-    0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .markdown-container h2 {
@@ -139,23 +146,16 @@ footer {
   padding-left: 1.25rem;
 }
 
-/* Static background - now just a background color */
-body {
-  /* This body rule is for the background color only, the main body rule is above */
-  background-color: var(--light-gray); /* Using variable */
-}
-
 /* Dark mode styles */
-.dark-mode
-  .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
-  background-color: var(--dark-text); /* Using variable */
+.dark-mode .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
+  background-color: var(--dark-text);
 }
 .dark-mode {
-  background-color: var(--black); /* Using variable */
+  background-color: var(--black);
 }
 .dark-mode footer,
 .dark-mode footer .text-gray-600 {
-  color: var(--light-text); /* Using variable */
+  color: var(--light-text);
 }
 .dark-mode .text-white,
 .dark-mode .text-black,
@@ -166,15 +166,13 @@ body {
 .dark-mode h4,
 .dark-mode .bg-white .card-content,
 .dark-mode .bg-white div {
-  color: var(--light-text); /* Using variable */
+  color: var(--light-text);
 }
 .dark-mode .bg-white {
-  background-color: var(--black); /* Using variable */
+  background-color: var(--black);
 }
 .dark-mode .shadow-md {
-  box-shadow:
-    0 4px 6px rgba(255, 255, 255, 0.1),
-    0 1px 3px rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.06);
 }
 
 @keyframes pulsate {
@@ -198,107 +196,91 @@ body {
 
 /* Legis section styles */
 .legis-section {
-  background-color: var(--white); /* Using variable */
-  padding: 2rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 .legis-section h1 {
-  color: var(--primary-blue); /* Using variable */
-  margin-top: 0;
-  border-bottom: 2px solid var(--primary-blue); /* Using variable */
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
+    color: var(--primary-blue);
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 .legis-list {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 .legis-list li {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 .legis-list a {
-  text-decoration: none;
-  color: var(--dark-text); /* Using variable */
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 .legis-list a:hover {
-  color: var(--primary-blue); /* Using variable */
+    color: var(--primary-blue);
 }
 .legis-group {
-  margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 .legis-group h2 {
-  color: var(--dark-text); /* Using variable */
-  border-bottom: 1px solid var(--medium-gray); /* Using variable */
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+    color: var(--dark-text);
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Prompts related styles */
-/* The body rule here is redundant with the main body rule at the top */
-/* body {
-    font-family: sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-} */
-
-.container {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: var(--white); /* Using variable */
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 .prompt-button {
-  background-color: var(--primary-blue); /* Using variable */
-  color: var(--white); /* Using variable */
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  margin-top: 10px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
 }
 
 .prompt-button:hover {
-  background-color: var(--dark-blue); /* Using variable */
+    background-color: var(--dark-blue);
 }
 
 .prompt-content {
-  display: none;
-  padding: 15px;
-  border: 1px solid var(--medium-gray); /* Using variable */
-  border-radius: 4px;
-  margin-top: 5px;
-  background-color: var(--light-gray); /* Using variable */
+    display: none;
+    padding: 15px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: var(--light-gray);
 }
 
 .prompt-content textarea {
-  width: 100%;
-  height: 200px;
-  box-sizing: border-box;
-  border: 1px solid var(--medium-gray); /* Using variable */
-  border-radius: 4px;
-  padding: 10px;
-  font-family: monospace;
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    padding: 10px;
+    font-family: monospace;
 }
 
 .copy-button {
-  background-color: var(--primary-blue); /* Using variable */
-  color: var(--white); /* Using variable */
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 10px;
-  float: right;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    float: right;
 }
 
 .copy-button:hover {
-  background-color: var(--dark-blue); /* Using variable */
+    background-color: var(--dark-blue);
 }
