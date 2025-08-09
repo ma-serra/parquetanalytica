@@ -10,8 +10,10 @@ document.getElementById("dark-mode-toggle").addEventListener("click", () => {
 
 // Elevator.js
 const elevator = new Elevator({
-  mainAudio: "https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3",
-  endAudio: "https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/ding.mp3",
+  mainAudio:
+    "https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/elevator.mp3",
+  endAudio:
+    "https://raw.githubusercontent.com/tholman/elevator.js/master/demo/music/ding.mp3",
   duration: 5000,
 });
 
@@ -23,17 +25,20 @@ footer.appendChild(footerContent);
 
 const copyright = document.createElement("div");
 copyright.className = "hidden md:flex";
-copyright.innerHTML = '&nbsp;&nbsp;&copy; ' + (new Date().getFullYear()) + ' Parquet Analytica';
+copyright.innerHTML =
+  "&nbsp;&nbsp;&copy; " + new Date().getFullYear() + " Parquet Analytica";
 footerContent.appendChild(copyright);
 
 const madeWith = document.createElement("div");
 madeWith.className = "hidden md:flex";
-madeWith.innerHTML = 'Imagined by Me - Realized with AI 🧠';
+madeWith.innerHTML = "Imagined by Me - Realized with AI 🧠";
 footerContent.appendChild(madeWith);
 
 const elevatorBtnDiv = document.createElement("div");
-elevatorBtnDiv.innerHTML = 'You need an elevator ride?&nbsp;&nbsp;<i class="fas fa-elevator"></i>&nbsp;&nbsp;';
-elevatorBtnDiv.className = "text-center flex justify-center items-center cursor-pointer mt-4";
+elevatorBtnDiv.innerHTML =
+  'You need an elevator ride?&nbsp;&nbsp;<i class="fas fa-elevator"></i>&nbsp;&nbsp;';
+elevatorBtnDiv.className =
+  "text-center flex justify-center items-center cursor-pointer mt-4";
 elevatorBtnDiv.onclick = () => {
   elevator.elevate();
 };
@@ -41,23 +46,23 @@ elevatorBtnDiv.onclick = () => {
 footerContent.appendChild(elevatorBtnDiv);
 document.body.appendChild(footer);
 
-
 // Scroll down button
-const scrollDownBtn = document.getElementById('scroll-down-btn');
-const headerContainer = document.getElementById('header-container');
+const scrollDownBtn = document.getElementById("scroll-down-btn");
+const headerContainer = document.getElementById("header-container");
 
 const toggleScrollButtonVisibility = () => {
   if (window.pageYOffset === 0) {
-    scrollDownBtn.style.display = 'flex';
+    scrollDownBtn.style.display = "flex";
   } else {
-    scrollDownBtn.style.display = 'none';
+    scrollDownBtn.style.display = "none";
   }
-}
+};
 
-scrollDownBtn.addEventListener('click', () => {
-  const yOffset = headerContainer.getBoundingClientRect().bottom + window.pageYOffset;
-  window.scrollTo({top: yOffset, behavior: 'smooth'});
+scrollDownBtn.addEventListener("click", () => {
+  const yOffset =
+    headerContainer.getBoundingClientRect().bottom + window.pageYOffset;
+  window.scrollTo({ top: yOffset, behavior: "smooth" });
 });
 
-window.addEventListener('scroll', toggleScrollButtonVisibility);
+window.addEventListener("scroll", toggleScrollButtonVisibility);
 toggleScrollButtonVisibility();

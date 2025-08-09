@@ -1,9 +1,133 @@
+:root {
+  --primary-blue: #2196f3; /* A slightly softer blue */
+  --dark-blue: #1976d2; /* Darker shade for hover/active */
+  --light-gray: #f5f5f5; /* Very light background */
+  --medium-gray: #e0e0e0; /* Subtle borders/separators */
+  --dark-text: #424242; /* Dark gray for main text */
+  --light-text: #757575; /* Lighter gray for secondary text */
+  --white: #ffffff;
+  --black: #212121; /* Near black for dark mode backgrounds */
+}
+
+/* Dark mode variables */
+.dark-mode {
+  --primary-blue: #64b5f6;
+  --dark-blue: #42a5f5;
+  --light-gray: #303030;
+  --medium-gray: #424242;
+  --dark-text: #e0e0e0;
+  --light-text: #bdbdbd;
+  --white: #212121;
+  --black: #ffffff;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-gray); /* Using variable */
+  color: var(--dark-text); /* Using variable */
+}
+
+.navbar {
+  background-color: var(--white); /* Using variable */
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-text); /* Using variable */
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-left: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--light-text); /* Using variable */
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue); /* Using variable */
+}
+
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero {
+  background-color: var(--primary-blue); /* Using variable */
+  color: var(--white); /* Using variable */
+  padding: 4rem 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background-color: var(--white); /* Using variable */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+}
+
+.feature-card h3 {
+  color: var(--primary-blue); /* Using variable */
+  margin-top: 0;
+}
+
+footer {
+  background-color: var(--black); /* Using variable */
+  color: var(--white); /* Using variable */
+  text-align: center;
+  padding: 1rem 0;
+  /* Removed margin-top: 2rem; from here as it was duplicated and not needed globally */
+}
+
 /* Extracted from inline styles */
 .markdown-container img {
   display: block;
   margin: 0 auto;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
 .markdown-container h2 {
@@ -15,27 +139,23 @@
   padding-left: 1.25rem;
 }
 
-/* Static background */
+/* Static background - now just a background color */
 body {
-    background-color: #f0f2f5;
-    background-image: url('Imagens/Gemini_Generated_Image_wghr9qwghr9qwghr.png'); /* Add this line */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-attachment: fixed; /* Make it static */
-    filter: grayscale(100%); /* Grayscale effect */
+  /* This body rule is for the background color only, the main body rule is above */
+  background-color: var(--light-gray); /* Using variable */
 }
 
 /* Dark mode styles */
-.dark-mode .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
-  background-color: #333333;
+.dark-mode
+  .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
+  background-color: var(--dark-text); /* Using variable */
 }
 .dark-mode {
-  background-color: #1a1a1a;
+  background-color: var(--black); /* Using variable */
 }
 .dark-mode footer,
 .dark-mode footer .text-gray-600 {
-  color: #f8f8f8;
+  color: var(--light-text); /* Using variable */
 }
 .dark-mode .text-white,
 .dark-mode .text-black,
@@ -46,13 +166,15 @@ body {
 .dark-mode h4,
 .dark-mode .bg-white .card-content,
 .dark-mode .bg-white div {
-  color: #f8f8f8;
+  color: var(--light-text); /* Using variable */
 }
 .dark-mode .bg-white {
-  background-color: #1a1a1a;
+  background-color: var(--black); /* Using variable */
 }
 .dark-mode .shadow-md {
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 4px 6px rgba(255, 255, 255, 0.1),
+    0 1px 3px rgba(255, 255, 255, 0.06);
 }
 
 @keyframes pulsate {
@@ -72,4 +194,111 @@ body {
 
 #scroll-down-btn i {
   animation: pulsate 1.5s linear infinite;
+}
+
+/* Legis section styles */
+.legis-section {
+  background-color: var(--white); /* Using variable */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.legis-section h1 {
+  color: var(--primary-blue); /* Using variable */
+  margin-top: 0;
+  border-bottom: 2px solid var(--primary-blue); /* Using variable */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.legis-list {
+  list-style: none;
+  padding: 0;
+}
+.legis-list li {
+  margin-bottom: 1rem;
+}
+.legis-list a {
+  text-decoration: none;
+  color: var(--dark-text); /* Using variable */
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.legis-list a:hover {
+  color: var(--primary-blue); /* Using variable */
+}
+.legis-group {
+  margin-bottom: 2rem;
+}
+.legis-group h2 {
+  color: var(--dark-text); /* Using variable */
+  border-bottom: 1px solid var(--medium-gray); /* Using variable */
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Prompts related styles */
+/* The body rule here is redundant with the main body rule at the top */
+/* body {
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+} */
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: var(--white); /* Using variable */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-button {
+  background-color: var(--primary-blue); /* Using variable */
+  color: var(--white); /* Using variable */
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.prompt-button:hover {
+  background-color: var(--dark-blue); /* Using variable */
+}
+
+.prompt-content {
+  display: none;
+  padding: 15px;
+  border: 1px solid var(--medium-gray); /* Using variable */
+  border-radius: 4px;
+  margin-top: 5px;
+  background-color: var(--light-gray); /* Using variable */
+}
+
+.prompt-content textarea {
+  width: 100%;
+  height: 200px;
+  box-sizing: border-box;
+  border: 1px solid var(--medium-gray); /* Using variable */
+  border-radius: 4px;
+  padding: 10px;
+  font-family: monospace;
+}
+
+.copy-button {
+  background-color: var(--primary-blue); /* Using variable */
+  color: var(--white); /* Using variable */
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  float: right;
+}
+
+.copy-button:hover {
+  background-color: var(--dark-blue); /* Using variable */
 }

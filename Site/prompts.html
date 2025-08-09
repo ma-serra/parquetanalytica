@@ -1,148 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prompts</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .prompt-button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            text-align: left;
-            margin-top: 10px;
-        }
-        .prompt-button:hover {
-            background-color: #0056b3;
-        }
-        .prompt-content {
-            display: none;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-top: 5px;
-            background-color: #f9f9f9;
-        }
-        .prompt-content textarea {
-            width: 100%;
-            height: 200px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 10px;
-            font-family: monospace;
-        }
-        .copy-button {
-            background-color: #28a745;
-            color: white;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 10px;
-            float: right;
-        }
-        .copy-button:hover {
-            background-color: #218838;
-        }
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="navbar-brand">Parquet Analytica</a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="leis.html" class="nav-link">Leis</a></li>
+        <li class="nav-item">
+          <a href="prompts.html" class="nav-link">Prompts</a>
+        </li>
+      </ul>
+    </nav>
 
-<div class="container" id="prompts-container">
-    <h1>Prompts</h1>
-    <!-- Os prompts serão carregados aqui -->
-</div>
+    <div class="container" id="prompts-container">
+      <h1>Prompts</h1>
+      <!-- Os prompts serão carregados aqui -->
+    </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', async function () {
-        const container = document.getElementById('prompts-container');
-        
-        try {
-            const response = await fetch('prompt-list.json');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            const promptFiles = await response.json();
-
-            for (const fileName of promptFiles) {
-                try {
-                    const promptResponse = await fetch(`Prompts/${fileName}`);
-                    if (!promptResponse.ok) {
-                        throw new Error(`HTTP error! status: ${promptResponse.status}`);
-                    }
-                    const textContent = await promptResponse.text();
-                    
-                    const promptName = fileName.replace('.txt', '');
-
-                    const button = document.createElement('button');
-                    button.className = 'prompt-button';
-                    button.textContent = promptName;
-                    
-                    const contentDiv = document.createElement('div');
-                    contentDiv.className = 'prompt-content';
-
-                    const textarea = document.createElement('textarea');
-                    textarea.readOnly = true;
-                    textarea.value = textContent;
-
-                    const copyButton = document.createElement('button');
-                    copyButton.className = 'copy-button';
-                    copyButton.textContent = 'Copiar';
-
-                    contentDiv.appendChild(textarea);
-                    contentDiv.appendChild(copyButton);
-
-                    container.appendChild(button);
-                    container.appendChild(contentDiv);
-
-                    button.addEventListener('click', () => {
-                        if (contentDiv.style.display === 'block') {
-                            contentDiv.style.display = 'none';
-                        } else {
-                            contentDiv.style.display = 'block';
-                        }
-                    });
-
-                    copyButton.addEventListener('click', () => {
-                        textarea.select();
-                        document.execCommand('copy');
-                    });
-
-                } catch (error) {
-                    console.error(`Erro ao carregar o prompt: ${fileName}`, error);
-                    const errorElement = document.createElement('p');
-                    errorElement.textContent = `Falha ao carregar o prompt: ${fileName}`;
-                    errorElement.style.color = 'red';
-                    container.appendChild(errorElement);
-                }
-            }
-        } catch (error) {
-            console.error('Erro ao carregar a lista de prompts:', error);
-            const errorElement = document.createElement('p');
-            errorElement.textContent = 'Falha ao carregar a lista de prompts (prompt-list.json). Execute o script generate-prompt-list.js';
-            errorElement.style.color = 'red';
-            container.appendChild(errorElement);
-        }
-    });
-</script>
-
-</body>
+    <script src="prompts-loader.js"></script>
+  </body>
 </html>
