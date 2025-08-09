@@ -211,9 +211,11 @@ footer {
 .legis-list {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 .legis-list li {
     margin-bottom: 1rem;
+    text-align: center;
 }
 .legis-list a {
     text-decoration: none;
@@ -283,4 +285,29 @@ footer {
 
 .copy-button:hover {
     background-color: var(--dark-blue);
+}
+
+.category-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.category-column {
+    flex: 1;
+    min-width: 280px; /* Adjust as needed */
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.category-column h2 {
+    color: var(--primary-blue);
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
