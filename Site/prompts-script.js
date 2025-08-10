@@ -54,8 +54,16 @@ async function loadPrompts() {
             });
 
             copyButton.addEventListener("click", () => {
-                textarea.select();
-                document.execCommand("copy");
+                navigator.clipboard.writeText(textarea.value).then(() => {
+                    // Optional: Provide feedback to the user, e.g., change button text
+                    const originalText = copyButton.textContent;
+                    copyButton.textContent = "Copiado!";
+                    setTimeout(() => {
+                        copyButton.textContent = originalText;
+                    }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                });
             });
         }
     } catch (error) {
