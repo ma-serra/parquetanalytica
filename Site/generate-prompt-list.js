@@ -6,16 +6,25 @@ const outputFile = path.join(__dirname, "prompt-list.json");
 
 try {
   const files = fs.readdirSync(promptsDir);
-  const txtFiles = files.filter(
-    (file) => path.extname(file).toLowerCase() === ".txt",
-  );
+  const promptData = [];
 
-  fs.writeFileSync(outputFile, JSON.stringify(txtFiles, null, 2), "utf8");
+  for (const file of files) {
+    if (path.extname(file).toLowerCase() === ".txt") {
+      const filePath = path.join(promptsDir, file);
+      const fileContent = fs.readFileSync(filePath, "utf8");
+      promptData.push({
+        name: file.replace(".txt", ""),
+        content: fileContent,
+      });
+    }
+  }
+
+  fs.writeFileSync(outputFile, JSON.stringify(promptData, null, 2), "utf8");
 
   console.log(
-    `Successfully generated prompt-list.json with ${txtFiles.length} prompts.`,
+    `Successfully generated prompt-list.json with ${promptData.length} prompts.`
   );
-  console.log("File list:", txtFiles);
+  console.log("Prompt data:", promptData.map(p => p.name)); // Log only names for brevity
 } catch (error) {
   console.error("Error generating prompt list:", error);
   process.exit(1);
