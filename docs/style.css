@@ -17,9 +17,9 @@ body {
 }
 
 .navbar {
-    background-color: var(--primary-color);
+    background-color: #0a192f; /* Even darker shade for a sleeker look */
     padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Softer, deeper shadow for depth */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +27,8 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid #233554; /* Using hex for consistency */
+    transition: all 0.3s ease-in-out; /* Smooth transitions for any changes */
 }
 
 .navbar-brand {
@@ -55,11 +56,14 @@ body {
     text-decoration: none;
     color: var(--light-text-color);
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
+    padding: 0.5rem 1rem; /* Added padding for a button-like feel */
+    border-radius: 4px; /* Rounded corners for the button effect */
 }
 
 .nav-link:hover {
     color: var(--accent-color);
+    background-color: var(--hover-color); /* Use the hover color variable */
 }
 
 .container {
@@ -74,22 +78,64 @@ body {
 }
 
 .hero {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    padding: 4rem 2rem;
-    border-radius: 0.5rem;
+    background: url('Imagens/Gemini_Generated_Image_4qou594qou594qou.png') no-repeat center center/cover;
+    color: #fff; /* White text to stand out against the dark background */
+    padding: 8rem 2rem; /* Increased padding for a more dramatic effect */
+    border-radius: 0; /* Full-width hero section */
     margin-bottom: 2rem;
+    text-align: center;
+    position: relative; /* For pseudo-element overlay */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.hero > * {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 3.5rem; /* Larger font size for impact */
     margin-bottom: 1rem;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 .hero p {
     font-size: 1.25rem;
     max-width: 600px;
     margin: 0 auto;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .features {
@@ -101,13 +147,17 @@ body {
 
 .feature-card {
     background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: left;
+    padding: 2.5rem; /* Increased padding */
+    border-radius: 8px; /* Slightly more pronounced rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    width: 320px; /* Slightly wider cards */
+    text-align: center; /* Centered text for a more balanced look */
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out; /* Smoother transition */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .feature-card:hover {
@@ -118,15 +168,37 @@ body {
 .feature-card h3 {
     color: var(--accent-color);
     margin-top: 0;
+    font-size: 1.5rem; /* Larger font size for the heading */
+}
+
+.feature-card .fas {
+    font-size: 3rem; /* Larger icon size */
+    margin-bottom: 1rem;
+    color: var(--accent-color);
 }
 
 footer {
-    background-color: var(--primary-color);
+    background-color: #0a192f; /* Matching the navbar for consistency */
     color: var(--light-text-color);
     text-align: center;
-    padding: 1rem 0;
+    padding: 2rem 0; /* Increased padding for better spacing */
     border-top: 1px solid var(--border-color);
-    /* Removed margin-top: 2rem; from here as it was duplicated and not needed globally */
+    margin-top: 4rem; /* More space above the footer */
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-link {
+    color: var(--light-text-color);
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
 }
 
 /* Markdown container styles */
@@ -334,4 +406,40 @@ footer {
 .legis-list a,
 .category-column h2 {
     text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero {
+        padding: 6rem 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 90%;
+    }
 }
