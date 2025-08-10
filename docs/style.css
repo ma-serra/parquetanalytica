@@ -1,0 +1,329 @@
+:root {
+    --primary-blue: #2196F3; /* A slightly softer blue */
+    --dark-blue: #1976D2; /* Darker shade for hover/active */
+    --light-gray: #F5F5F5; /* Very light background */
+    --medium-gray: #E0E0E0; /* Subtle borders/separators */
+    --dark-text: #424242; /* Dark gray for main text */
+    --light-text: #757575; /* Lighter gray for secondary text */
+    --white: #FFFFFF;
+    --black: #212121; /* Near black for dark mode backgrounds */
+}
+
+/* Dark mode variables */
+.dark-mode {
+    --primary-blue: #64B5F6;
+    --dark-blue: #42A5F5;
+    --light-gray: #303030;
+    --medium-gray: #424242;
+    --dark-text: #E0E0E0;
+    --light-text: #BDBDBD;
+    --white: #212121;
+    --black: #FFFFFF;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-top: 70px; /* Adjust based on navbar height */
+    background-color: var(--light-gray);
+    color: var(--dark-text);
+}
+
+.navbar {
+    background-color: var(--white);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-left: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--light-text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-blue);
+}
+
+.container {
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px; /* From prompts.html container */
+    margin: 20px auto; /* From prompts.html container */
+    background-color: var(--white); /* From prompts.html container */
+    border-radius: 8px; /* From prompts.html container */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* From prompts.html container */
+}
+
+.hero {
+    background-color: var(--primary-blue);
+    background-image: linear-gradient(45deg, var(--primary-blue) 0%, var(--dark-blue) 100%); /* Subtle gradient */
+    color: var(--white);
+    padding: 4rem 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: left;
+}
+
+.feature-card h3 {
+    color: var(--primary-blue);
+    margin-top: 0;
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem 0;
+    /* Removed margin-top: 2rem; from here as it was duplicated and not needed globally */
+}
+
+/* Markdown container styles */
+.markdown-container img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.markdown-container h2 {
+  font-weight: bold;
+}
+
+.markdown-container ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+/* Dark mode styles */
+.dark-mode .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
+  background-color: var(--dark-text);
+}
+.dark-mode {
+  background-color: var(--black);
+}
+.dark-mode footer,
+.dark-mode footer .text-gray-600 {
+  color: var(--light-text);
+}
+.dark-mode .text-white,
+.dark-mode .text-black,
+.dark-mode .text-gray-900,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode .bg-white .card-content,
+.dark-mode .bg-white div {
+  color: var(--light-text);
+}
+.dark-mode .bg-white {
+  background-color: var(--black);
+}
+.dark-mode .shadow-md {
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.06);
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+}
+
+#scroll-down-btn i {
+  animation: pulsate 1.5s linear infinite;
+}
+
+/* Legis section styles */
+.legis-section {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.legis-section h1 {
+    color: var(--primary-blue);
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-blue);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.legis-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.legis-list li {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.legis-list a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+.legis-list a:hover {
+    color: var(--primary-blue);
+}
+.legis-group {
+    margin-bottom: 2rem;
+}
+.legis-group h2 {
+    color: var(--dark-text);
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Prompts related styles */
+.prompt-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.prompt-button:hover {
+    background-color: var(--dark-blue);
+}
+
+.prompt-content {
+    display: none;
+    padding: 15px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    margin-top: 5px;
+    background-color: var(--light-gray);
+}
+
+.prompt-content textarea {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    padding: 10px;
+    font-family: monospace;
+}
+
+.copy-button {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    float: right;
+}
+
+.copy-button:hover {
+    background-color: var(--dark-blue);
+}
+
+.category-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.category-column {
+    flex: 1;
+    min-width: 280px; /* Adjust as needed */
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.category-column h2 {
+    color: var(--primary-blue);
+    border-bottom: 1px solid var(--medium-gray);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero h1,
+.hero p,
+.features h3,
+.features p,
+.legis-section h1,
+.legis-section h2,
+.legis-list li,
+.legis-list a,
+.category-column h2 {
+    text-align: center;
+}

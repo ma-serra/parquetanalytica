@@ -36,7 +36,7 @@ async function loadContent(pageUrl) {
 
         if (contentToInject) {
             // Clear existing content and inject new HTML
-            mainContentDiv.innerHTML = contentToInject.innerHTML; // Inject only the HTML of the fetched container
+            mainContentDiv.innerHTML = contentToInject.outerHTML; // Inject the whole container
             console.log('Content successfully loaded into mainContentDiv from fetched container.');
 
             // Dynamically load scripts based on the pageUrl
