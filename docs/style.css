@@ -20,15 +20,21 @@ body {
     background-color: #0a192f; /* Even darker shade for a sleeker look */
     padding: 1rem 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Softer, deeper shadow for depth */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     border-bottom: 1px solid #233554; /* Using hex for consistency */
     transition: all 0.3s ease-in-out; /* Smooth transitions for any changes */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
 }
 
 .navbar-brand {
