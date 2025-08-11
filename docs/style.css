@@ -370,7 +370,7 @@ footer {
     background-color: var(--text-color);
 }
 
-.category-columns {
+.leis-page .category-columns {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -378,7 +378,7 @@ footer {
     margin-top: 2rem;
 }
 
-.category-column {
+.leis-page .category-column {
     flex: 1;
     min-width: 280px; /* Adjust as needed */
     background-color: var(--secondary-color);
