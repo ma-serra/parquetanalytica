@@ -1,31 +1,45 @@
+/* Sugestões de Estilo para Parquet Analytica
+  Versão: 1.0
+  Descrição: Estilo refinado com foco em sobriedade e profissionalismo.
+*/
+
+/* 1. Paleta de Cores e Tipografia */
 :root {
-  --primary-color: #0a192f;
-  --secondary-color: #172a45;
-  --accent-color: #64ffda;
-  --text-color: #ccd6f6;
-  --light-text-color: #8892b0;
-  --border-color: #233554;
-  --hover-color: rgba(100, 255, 218, 0.1);
+  --primary-bg-color: #f8f9fa;
+  --secondary-bg-color: #ffffff;
+  --header-footer-bg: #003366; /* Azul Marinho Sóbrio */
+  --primary-text-color: #212529;
+  --secondary-text-color: #4a5568; /* Cinza Azulado */
+  --accent-color: #bda17c; /* Dourado */
+  --border-color: #dee2e6;
+  --font-heading: 'Lora', serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-body);
     margin: 0;
-    padding-top: 70px; /* Adjust based on navbar height */
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    padding-top: 70px; /* Espaço para a navbar fixa */
+    background-color: var(--primary-bg-color);
+    color: var(--primary-text-color);
+    line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--header-footer-bg);
+}
+
+/* 2. Barra de Navegação (Navbar) */
 .navbar {
-    background-color: #0a192f; /* Even darker shade for a sleeker look */
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Softer, deeper shadow for depth */
+    background-color: var(--header-footer-bg);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid #233554; /* Using hex for consistency */
-    transition: all 0.3s ease-in-out; /* Smooth transitions for any changes */
+    padding: 0.5rem 0;
 }
 
 .navbar-container {
@@ -33,18 +47,20 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1200px; /* Adjust as needed */
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .navbar-brand {
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .navbar-nav {
@@ -55,141 +71,101 @@ body {
 }
 
 .nav-item {
-    margin-left: 1.5rem;
+    margin-left: 1rem;
 }
 
 .nav-link {
     text-decoration: none;
-    color: var(--light-text-color);
-    font-weight: 500;
-    transition: color 0.3s ease, background-color 0.3s ease; /* Added background-color transition */
-    padding: 0.5rem 1rem; /* Added padding for a button-like feel */
-    border-radius: 4px; /* Rounded corners for the button effect */
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
-    background-color: var(--hover-color); /* Use the hover color variable */
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* 3. Estrutura e Seções */
 .container {
-    padding: 2rem;
-    text-align: center;
-    max-width: 800px; /* From prompts.html container */
-    margin: 20px auto; /* From prompts.html container */
-    background-color: var(--secondary-color); /* From prompts.html container */
-    border-radius: 8px; /* From prompts.html container */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* From prompts.html container */
-    border: 1px solid var(--border-color);
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
+.page-section {
+    padding: 4rem 0;
+}
+
+/* 4. Seção Hero */
 .hero {
-    background: url('Imagens/Gemini_Generated_Image_4qou594qou594qou.png') no-repeat center center/cover;
-    color: #fff; /* White text to stand out against the dark background */
-    padding: 8rem 2rem; /* Increased padding for a more dramatic effect */
-    border-radius: 0; /* Full-width hero section */
-    margin-bottom: 2rem;
+    background-color: var(--header-footer-bg);
+    color: #fff;
+    padding: 5rem 2rem;
     text-align: center;
-    position: relative; /* For pseudo-element overlay */
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for text readability */
-    z-index: 1;
-}
-
-.hero > * {
-    position: relative;
-    z-index: 2;
+    margin-bottom: 0;
 }
 
 .hero h1 {
-    font-size: 3.5rem; /* Larger font size for impact */
+    font-size: 3rem;
+    color: #ffffff;
     margin-bottom: 1rem;
-    animation: fadeInDown 1s ease-in-out;
 }
 
 .hero p {
-    font-size: 1.25rem;
-    max-width: 600px;
+    font-size: 1.15rem;
+    max-width: 650px;
     margin: 0 auto;
-    animation: fadeInUp 1s ease-in-out;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* 5. Cards de Destaque */
 .features {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    flex-wrap: wrap;
+    text-align: center;
 }
 
 .feature-card {
-    background-color: var(--secondary-color);
-    padding: 2.5rem; /* Increased padding */
-    border-radius: 8px; /* Slightly more pronounced rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-    width: 320px; /* Slightly wider cards */
-    text-align: center; /* Centered text for a more balanced look */
+    background-color: var(--secondary-bg-color);
+    padding: 2.5rem;
+    border-radius: 8px;
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease-in-out; /* Smoother transition */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .feature-card h3 {
-    color: var(--accent-color);
     margin-top: 0;
-    font-size: 1.5rem; /* Larger font size for the heading */
+    font-size: 1.5rem;
+}
+
+.feature-card p {
+    color: var(--secondary-text-color);
+    text-align: justify;
 }
 
 .feature-card .fas {
-    font-size: 3rem; /* Larger icon size */
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: var(--accent-color);
 }
 
+/* 6. Rodapé (Footer) */
 footer {
-    background-color: #0a192f; /* Matching the navbar for consistency */
-    color: var(--light-text-color);
+    background-color: var(--header-footer-bg);
+    color: rgba(255, 255, 255, 0.8);
     text-align: center;
-    padding: 2rem 0; /* Increased padding for better spacing */
-    border-top: 1px solid var(--border-color);
-    margin-top: 4rem; /* More space above the footer */
+    padding: 3rem 0;
+    margin-top: 4rem;
 }
 
 .social-links {
@@ -197,9 +173,9 @@ footer {
 }
 
 .social-link {
-    color: var(--light-text-color);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.5rem;
-    margin: 0 0.5rem;
+    margin: 0 0.75rem;
     transition: color 0.3s ease;
 }
 
@@ -207,139 +183,23 @@ footer {
     color: var(--accent-color);
 }
 
-/* Markdown container styles */
-.markdown-container img {
-  display: block;
-  margin: 0 auto;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
-}
-
-.markdown-container h2 {
-  font-weight: bold;
-}
-
-.markdown-container ul {
-  list-style-type: disc;
-  padding-left: 1.25rem;
-}
-
-/* Dark mode styles */
-.dark-mode .bg-white.p-4.rounded.shadow-md.transition-colors.duration-200.hover\:bg-gray-100:hover {
-  background-color: var(--dark-text);
-}
-.dark-mode {
-  background-color: var(--black);
-}
-.dark-mode footer,
-.dark-mode footer .text-gray-600 {
-  color: var(--light-text);
-}
-.dark-mode .text-white,
-.dark-mode .text-black,
-.dark-mode .text-gray-900,
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode h4,
-.dark-mode .bg-white .card-content,
-.dark-mode .bg-white div {
-  color: var(--light-text);
-}
-.dark-mode .bg-white {
-  background-color: var(--black);
-}
-.dark-mode .shadow-md {
-  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1), 0 1px 3px rgba(255, 255, 255, 0.06);
-}
-
-@keyframes pulsate {
-  0% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-}
-
-#scroll-down-btn i {
-  animation: pulsate 1.5s linear infinite;
-}
-
-/* Legis section styles */
-.legis-section {
-    background-color: var(--secondary-color);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border: 1px solid var(--border-color);
-}
-.legis-section h1 {
+/* 7. Estilos para conteúdo carregado dinamicamente (Leis, Prompts) */
+.prompt-button, .copy-button {
+    font-family: var(--font-body);
+    font-weight: 600;
+    background-color: transparent;
     color: var(--accent-color);
-    margin-top: 0;
-    border-bottom: 2px solid var(--accent-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-.legis-list {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-.legis-list li {
-    margin-bottom: 1rem;
-    text-align: center;
-}
-.legis-list a {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-.legis-list a:hover {
-    color: var(--accent-color);
-}
-.legis-group {
-    margin-bottom: 2rem;
-}
-.legis-group h2 {
-    color: var(--text-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Prompts related styles */
-.prompt-button {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    padding: 10px 15px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--accent-color);
+    padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%;
-    text-align: left;
-    margin-top: 10px;
     transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
-.prompt-button:hover {
-    background-color: var(--hover-color);
-}
-
-.prompt-content {
-    display: none;
-    padding: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    margin-top: 5px;
-    background-color: var(--primary-color);
+.prompt-button:hover, .copy-button:hover {
+    background-color: var(--accent-color);
+    color: var(--secondary-bg-color);
 }
 
 .prompt-content textarea {
@@ -350,101 +210,45 @@ footer {
     border-radius: 4px;
     padding: 10px;
     font-family: monospace;
-    background-color: var(--primary-color);
-    color: var(--text-color);
-}
-
-.copy-button {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
-    float: right;
-    transition: all 0.3s ease;
-}
-
-.copy-button:hover {
-    background-color: var(--text-color);
+    background-color: #fdfdfd;
+    color: var(--primary-text-color);
 }
 
 .leis-page .category-columns {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
-    margin-top: 2rem;
 }
 
 .leis-page .category-column {
-    flex: 1;
-    min-width: 280px; /* Adjust as needed */
-    background-color: var(--secondary-color);
+    background-color: var(--secondary-bg-color);
     padding: 1.5rem;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    text-align: left;
     border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
 }
 
-.category-column:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.legis-list a {
+    color: var(--primary-text-color);
 }
-
-.category-column h2 {
+.legis-list a:hover {
     color: var(--accent-color);
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
 }
 
-.hero h1,
-.hero p,
-.features h3,
-.features p,
-.legis-section h1,
-.legis-section h2,
-.legis-list li,
-.legis-list a,
-.category-column h2 {
-    text-align: center;
-}
-
-/* Responsive Design */
+/* 8. Responsividade */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
+    body {
+        padding-top: 120px; /* Ajuste para navbar em coluna */
     }
-
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .nav-item {
-        margin-left: 0;
-        margin-bottom: 0.5rem;
-    }
-
-    .hero {
-        padding: 6rem 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .features {
+    .navbar-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .feature-card {
-        width: 90%;
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
     }
 }
