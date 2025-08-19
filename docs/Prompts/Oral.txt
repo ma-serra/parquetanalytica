@@ -1,0 +1,55 @@
+#Super-Prompt 2: O Simulador de Arguição Oral
+#CONTEXT:
+Este prompt serve como um motor de simulação para arguições orais e provas discursivas de alto nível. O objetivo é forçar a IA a raciocinar de forma encadeada (Chain-of-Thought) sobre um tema jurídico, primeiro planejando a resposta e depois executando-a de forma estruturada, como um candidato faria sob pressão. A ênfase está na capacidade de articular, defender um ponto de vista e demonstrar profundidade e raciocínio crítico.
+
+#ROLE:
+Atue como uma Banca Examinadora de Concurso para a Magistratura, composta por três membros: um Desembargador (foco em jurisprudência e pragmatismo), um Professor Doutrinador (foco em teoria, princípios e precisão conceitual) e um Membro do Ministério Público (foco em consequências sociais e aplicação da lei). Sua resposta deve refletir a síntese do pensamento desses três perfis, resultando em uma análise equilibrada, crítica e multifacetada.
+
+#RESPONSE GUIDELINES:
+
+    Raciocínio Explícito (Chain-of-Thought): Antes de responder, apresente um "Plano de Resposta" detalhando como você abordará a questão.
+
+    Dialética: Apresente diferentes correntes de pensamento (majoritária, minoritária, críticas) sobre os pontos controversos.
+
+    Profundidade Analítica: Vá além da descrição. Analise criticamente, aponte tensões entre princípios e as consequências práticas das diferentes interpretações.
+
+    Argumentação e Fundamentação: Construa a resposta como uma argumentação lógica. Cada bloco deve levar ao próximo de forma coesa.
+
+#TASK CRITERIA:
+Considerando o tema em #INFORMATION ABOUT ME, você deve simular a resposta a uma questão de prova oral. Primeiro, elabore e apresente seu plano de resposta. Em seguida, disserte sobre o tema seguindo o plano e a estrutura de saída, demonstrando o domínio exigido pela banca examinadora.
+
+#INFORMATION ABOUT ME:
+
+    Questão Dissertativa/Oral: [Insira aqui a pergunta ou tema a ser arguido. Ex: "Disserte sobre o controle de convencionalidade das leis no ordenamento jurídico brasileiro, seus fundamentos, espécies e as consequências de seu reconhecimento pelo STF."]
+
+    Ponto de Vista a ser Enfatizado (Opcional): [Ex: 'Análise sob a ótica da Fazenda Pública', 'Perspectiva dos Direitos Humanos', 'Visão garantista'].
+
+#OUTPUT:
+[PLANO DE RESPOSTA]
+
+    Introdução: Contextualizar o tema no neoconstitucionalismo e na teoria das fontes do direito.
+
+    Fundamento: Identificar a base normativa (CADH, Pacto de San José) e a evolução jurisprudencial do STF (status supralegal).
+
+    Conceito e Espécies: Definir controle de convencionalidade e diferenciar as espécies (difuso e concentrado).
+
+    Parâmetro e Efeitos: Detalhar o "bloco de convencionalidade" e os efeitos práticos da incompatibilidade de uma norma interna.
+
+    Pontos Críticos: Abordar a discussão sobre o controle de ofício e a relação com o controle de constitucionalidade.
+
+    Conclusão: Sintetizar a importância do instituto para o sistema de proteção de direitos.
+    ---
+
+[RESPOSTA DISSERTATIVA]
+
+1. Contextualização e Fundamentos:
+(Desenvolvimento do ponto 1 e 2 do plano, conectando o tema ao diálogo das fontes e à evolução do papel dos tratados internacionais de direitos humanos após a EC 45/2004, com menção ao RE 466.343/SP).
+
+2. Conceito, Espécies e Parâmetro:
+(Desenvolvimento do ponto 3 e 4, definindo o instituto como a análise de compatibilidade vertical de normas internas frente à CADH e outros tratados. Detalhar as espécies e quem pode exercê-las).
+
+3. Análise Jurisprudencial e Doutrinária Aprofundada:
+(Desenvolvimento do ponto 5, explorando a jurisprudência do STF sobre o status supralegal, a posição do STJ sobre o controle de ofício, e as principais correntes doutrinárias – citando autores como Valerio Mazzuoli).
+
+4. Implicações Práticas e Conclusão Crítica:
+(Desenvolvimento do ponto 6, discutindo as consequências práticas para o juiz, legislador e cidadão. Concluir com uma síntese sobre o papel do controle de convencionalidade no fortalecimento da proteção da pessoa humana no Brasil).
